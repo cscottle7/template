@@ -1,0 +1,30 @@
+{
+    "name": "create_pr_from_staged_changes",
+    "description": "A composite tool that stages all local changes, commits them with a provided message, pushes them to a new branch, and opens a GitHub pull request. Use this for the complete, end-to-end final step of a development task.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "commit_message": {
+          "type": "string",
+          "description": "The full commit message for the changes, which should follow the Conventional Commits standard."
+        },
+        "branch_name": {
+          "type": "string",
+          "description": "The name of the new feature branch to be created and pushed, e.g., 'feature/JIRA-123-new-endpoint'."
+        },
+        "pr_title": {
+          "type": "string",
+          "description": "The title for the pull request to be created on GitHub."
+        },
+        "pr_body": {
+          "type": "string",
+          "description": "The markdown content for the body of the pull request."
+        }
+      },
+      "required": [
+        "commit_message",
+        "branch_name",
+        "pr_title"
+      ]
+    }
+  }
