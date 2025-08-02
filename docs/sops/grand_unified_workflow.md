@@ -25,11 +25,9 @@ Process: Before technical planning, the ***CLAUDE****.md brief is submitted to t
 ## Agent: /plan:create (The Project Plan Architect)
 Process: The Architect agent analyses the vetted ***CLAUDE***.md file and deconstructs it into a granular, step-by-step development plan. The outcome is the
 task_deps.md file, which serves as the final, executable checklist for the project.
-## Phase 6: Supervised Execution
-Agent: /workflow:run_automated (The Orchestrator AI)
-Process: The Director launches the Orchestrator, which executes the task_deps.md plan one task at a time. After each task, the Orchestrator pauses and presents the results, waiting for the Director's
-approve or reject [feedback] command before proceeding. The Orchestrator delegates tasks to specialist **worker** agents like
-/dev:implement and /test:generate.
+Phase 6: Supervised Automation
+Sub-Agent: workflow_orchestrator (The Orchestrator AI)
+Process: The Director delegates the execution of the task_deps.md plan to the Orchestrator. The agent then runs the entire plan autonomously, managing specialist agents and handling errors. It will only pause for Director approval at critical, pre-defined HIL-Approval checkpoints or in the event of an unrecoverable error.
 ## Phase 7: Final Documentation
 ## Agent: /document:create (The DocuMentor)
 Process: Once the Orchestrator has completed all tasks in the plan, the DocuMentor agent is engaged. It analyses the original
