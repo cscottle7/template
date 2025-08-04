@@ -67,10 +67,11 @@
 
 ### 11. Agentic Workflow Rules
 This project operates under a strict agentic workflow known as the **Plan-Then-Execute Doctrine**. All complex development tasks must follow this multi-step process:
-1.  **Planning:** Invoke the `@planner` agent to generate a detailed proposal.
+1.  **Planning:** Invoke the `plan_creator` agent to generate a detailed proposal.
 2.  **Human Approval:** A human developer MUST review and approve the plan.
-3.  **Execution:** The `@implementer` agent writes the code strictly adhering to the approved plan.
-4.  **Review:** All new code MUST be reviewed by the `@reviewer` agent before being committed.
+3.  **Execution:** The `dev_implement` agent writes the code strictly adhering to the approved plan.
+4.  **Review:** All new code MUST be reviewed by the `review_code` agent before being committed.
+
 
 ### 12. Prohibitions (Forbidden Actions)
 * **DO NOT** [e.g., commit code directly to the main branch.]

@@ -5,14 +5,13 @@ Document ID: ***DWS****-****SOP***-WF-001 Version: 1.0
 3.0 Procedure: The Seven Phases of Development
 This system is a seven-phase process designed to take a project from a high-level idea to a fully documented final product. The user's role is that of a
 Director, supervising a team of specialist AI agents.
-## Phase 1: Navigation
-## Agent: /glenn (The Conductor)
-Process: The Director states their goal in natural language.
-/glenn acts as the master entry point, analysing the goal and providing the exact, ready-to-run specialist command needed to initiate the appropriate workflow phase.
-## Phase 2: Project Ignition
-## Agent: /brief:create (The DevPilot)
-Process: The DevPilot agent conducts a structured interview with the Director to gather the project's goals, features, and technical directives. The outcome is a comprehensive
-***CLAUDE****.md file, which serves as the project's **constitution* or master context document.
+## Phase 1: Project Ignition (Human-Led)
+**Process:** The Director completes the "SOP: Project Ignition Framework" document. This provides the foundational goals, scope, and technical constraints. The output of this phase is the primary input for the next phase.
+
+## Phase 2: AI-Assisted Briefing (Project Ignition)
+**Agent:** `brief_creator` (The DevPilot)
+**Process:** The `brief_creator` agent ingests the completed Project Ignition document and uses it to conduct a more focused, clarifying interview, producing the comprehensive `CLAUDE.md` file.
+
 ## Phase 3: Documentation Bootstrap
 Agent: /project:bootstrap_docs (Documentation Specialist)
 Process: This agent reads the ***CLAUDE****.md file to identify the project's technology stack. It then uses a Model-Context-Protocol (****MCP***) to fetch the latest official documentation for each technology, compiling the results into a
